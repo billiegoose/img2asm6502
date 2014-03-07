@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Image->6502 Assembly</title>
+  <style>
+  .hide {display:none}
+  </style>
+</head>
+<body>
+<img id="sourceImage" src="chrome.jpg" class="hide"/>
+<canvas id="workCanvas" width="32" height="32" class="hide"
+        style="border: 1px solid black"></canvas>
+<p>
+  Drag and drop images (32x32 or smaller) onto canvas below.<br>
+  <canvas id="displayCanvas" width="256" height="144"
+        style="border: 1px solid black"></canvas><br>
+  KEY - Left: Original, Right: Result, Bottom: the color palette (fixed).
+</p>
+<p>
+  Assembly code for <a href="http://skilldrick.github.io/easy6502">Easy 6502</a> processor.<br>
+  <textarea rows="16" id='hex'></textarea>
+</p>
+<script type="text/javascript" src="image2asm.js"></script>
+</body>
+</html>
