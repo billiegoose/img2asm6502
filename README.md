@@ -5,10 +5,6 @@ I was playing with [Easy 6502](http://skilldrick.github.io/easy6502) and wanted 
 This code lets you drop an image onto the web page and spits out the assembly code to render that image.
 Currently it always uses the entire screen area (32x32 pixels).
 
-It uses Node as a http server because otherwise Chrome's Cross-Site Scripting protection gets in the way when trying to extract pixel data.
+Try the [demo here](https://wmhilton.github.io/img2asm6502)
 
-Instructions:
-
-1. `npm install connect`
-2. `node server.js`
-3. Point browser to `localhost:9778`
+You need to serve the page, not just open it by double clicking it, because otherwise Chrome's Cross-Site Scripting protection gets in the way when trying to extract pixel data.

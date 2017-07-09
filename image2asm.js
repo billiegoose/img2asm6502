@@ -3,14 +3,19 @@ displayCanvas.ondragover = function () { this.className = 'hover'; return false;
 displayCanvas.ondragend = function () { this.className = ''; return false; };
 displayCanvas.ondrop = function (e) {
     e.preventDefault();
-    readfile(e.dataTransfer.files[0]);
+    if (e.dataTransfer.files.length > 0) {
+      readfile(e.dataTransfer.files[0]);
+    } else {
+      sourceImage.src = e.dataTransfer.getData('text/uri-list');
+      setTimeout(processImage, 500);
+    }
 }
 
 function readfile (file) {
     var reader = new FileReader();
     // TODO: tidy up. use Image.onload instead of timeout assumption.
     reader.onload = function (event) {
-      sourceImage.src = event.target.result;  
+      sourceImage.src = event.target.result;
       setTimeout(processImage, 500);
     };
     reader.readAsDataURL(file);
